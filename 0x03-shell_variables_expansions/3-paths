@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l |tr -t ':/' '\n'|wc -l
+ls -l |tr ':' '\n'|wc -l
