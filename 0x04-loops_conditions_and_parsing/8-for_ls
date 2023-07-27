@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Display ls without number- in the files in the current directory
+
+LIST="$(ls)"
+for i in $LIST; do
+	name=$(echo "$i" | cut -d'-' -f2)
+    	echo "$name"
+done
