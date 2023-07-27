@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # print Best School on 9th iteration print Hi also
 
-n=1
+n=0
 while [ $n -ne 10 ]
 do
 	if [ $n -eq 9 ]
