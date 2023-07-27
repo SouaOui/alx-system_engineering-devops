@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# print best school using while loop
+
+n=0
+while [ $n -le 9 ]
+do
+	echo "Best School"
+	((n++))
+done
