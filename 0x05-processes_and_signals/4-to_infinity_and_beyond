@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Display a message each 2 seconds ctrl + c intterupt
+
 while [ True ]
 do
     echo "To infinity and beyond"
