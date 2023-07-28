@@ -2,7 +2,7 @@
 # Display a message "To infinity and beyond" ctrl + c intterupt
 # sleep 2 in between each iteration.
 
-while [ True ]
+while true
 do
     echo "To infinity and beyond"
     sleep 2
