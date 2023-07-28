@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # List you running processes
-
 ps aux
