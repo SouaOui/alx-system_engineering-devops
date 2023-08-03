@@ -1,0 +1,3 @@
+## Networking basics
+
+Networking is the foundation of modern communication, enabling the seamless exchange of information and resources across the globe. At its core, networking refers to the practice of connecting computers, devices, and other systems together to facilitate data transmission and resource sharing. This interconnectedness allows individuals, businesses, and institutions to communicate, collaborate, and access valuable information efficiently and effectively.
