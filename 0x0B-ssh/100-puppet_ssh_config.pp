@@ -1,8 +1,14 @@
 # Client configuration file (w/ Puppet)
 # ssh configuration .pp
-file { '~/.ssh/config':
+file { 'give the Identity file':
     ensure                 => 'present'
     passwordauthentication => 'no',
-    identity               => '~/.ssh/school',
-    type                   => 'ssh-rsa',
+    line                   => 'IdentityFile ~/.ssh/school',
+    path                   => '/etc/ssh/ssh_config.'
+}
+file { 'no password authentification':
+    ensure                 => 'present'
+    passwordauthentication => 'no',
+    line                   => 'PasswordAuthentication no',
+    path                   => '/etc/ssh/ssh_config.'
 }
