@@ -1,5 +1,7 @@
 # Client configuration file (w/ Puppet)
 # ssh configuration .pp
+include stdlib
+
 file_line { 'Turn off passwd auth':
     ensure => 'present'
     line   => '  PasswordAuthentication no',
