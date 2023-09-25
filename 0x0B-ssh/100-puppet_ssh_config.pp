@@ -1,11 +1,11 @@
 # Client configuration file (w/ Puppet)
 # ssh configuration .pp
-file_line { 'give the Identity file':
+file_line { 'Delare identity file':
     ensure => 'present'
     line   => '  IdentityFile ~/.ssh/school',
     path   => '/etc/ssh/ssh_config',
 }
-file_line { 'no password authentification':
+file_line { 'Turn off passwd auth':
     ensure => 'present'
     line   => '  PasswordAuthentication no',
     path   => '/etc/ssh/ssh_config',
