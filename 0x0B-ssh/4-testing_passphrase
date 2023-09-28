@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# create another pair key with custom name private key
+# and custom passphrase
+ssh-keygen -b 4096 -f google -N you_friend
