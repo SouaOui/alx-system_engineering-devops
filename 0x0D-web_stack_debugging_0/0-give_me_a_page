@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# this script do all the steps that we do manually in one place
+sudo service apache2 start
+sudo service apache2 status
+curl 0:8080
