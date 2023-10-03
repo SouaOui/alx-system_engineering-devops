@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# this script do all the steps that we do manually in one place
+# run apache2 on the container
 service apache2 start
