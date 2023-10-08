@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # install HAproxy on the server and configure it send traffic to both servers
-apt update
-apt install haproxy
+apt-get update
+apt-get install haproxy
 echo -e "\nfrontend cfg_front\n\tlisten load_listener\n\tmode http\n\toption httpclose\n
 \tdefault_backend cfg_back\nbackend cfg_back\n\tbalance roundrobin\n\tserver 374415-web-01 52.91.146.24:80 check\n\tserver 374415-web-02 54.237.94.137:80 check\n" >> /etc/haproxy/haproxy.cfg
-sudo service haproxy restart
+service haproxy restart
