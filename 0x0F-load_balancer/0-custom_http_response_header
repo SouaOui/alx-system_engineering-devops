@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # add configuration 
 apt-get update
-apt-get install nginx
+apt-get install nginx -y
 sed -i '\%^\tlocation / {%a\ \n\t\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+nginx -t
 service nginx restart
