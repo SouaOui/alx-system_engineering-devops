@@ -7,10 +7,10 @@ rec3=$(dig "web-01.$domain" +short | awk 'NR==1{print}')
 rec4=$(dig "web-02.$domain" +short | awk 'NR==1{print}')
 if [ $# -lt 2 ]; then
 	echo "The subdomain www is a A record and points to $rec1"
-    	echo "The subdomain lb-01  is a A record and points to $rec2"
-    	echo "The subdomain web-01 is a A record and points to $rec3"
-    	echo "The subdomain web-02 is a A record and points to $rec4"
+    echo "The subdomain lb-01  is a A record and points to $rec2"
+    echo "The subdomain web-01 is a A record and points to $rec3"
+    echo "The subdomain web-02 is a A record and points to $rec4"
 elif [ $# -eq 2 ]; then
 	op=$(dig "$2.$domain" +short | awk 'NR==1{print}')
-        echo "The subdomain $2 is a A record and points to $op"
+    echo "The subdomain $2 is a A record and points to $op"
 fi
