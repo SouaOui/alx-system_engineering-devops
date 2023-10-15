@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 # Define a function to display information for a subdomain
-
 domain="${1%.}"
 rec1=$(dig "www.$domain" +short | awk 'NR==1{print}')
 rec2=$(dig "lb-01.$domain" +short | awk 'NR==1{print}')
 rec3=$(dig "web-01.$domain" +short | awk 'NR==1{print}')
 rec4=$(dig "web-02.$domain" +short | awk 'NR==1{print}')
-
 if [ $# -lt 2 ]; then
 	echo "The subdomain www is a A record and points to $rec1"
     	echo "The subdomain lb-01  is a A record and points to $rec2"
