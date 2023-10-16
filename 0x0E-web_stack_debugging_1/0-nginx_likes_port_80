@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# enable the port 80 on nginx
+sudo ln /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
