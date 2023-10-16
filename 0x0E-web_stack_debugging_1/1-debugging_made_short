@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# enable the port 80 on nginx and kill nginx
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
+pkill -o nginx
