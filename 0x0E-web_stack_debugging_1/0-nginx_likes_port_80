@@ -4,3 +4,4 @@ remove="/etc/nginx/sites-enabled/default"
 point="/etc/nginx/sites-available/default"
 rm "$remove"
 ln -s "$point" "$remove"
+service nginx restart
