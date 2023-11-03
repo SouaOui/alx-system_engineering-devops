@@ -2,8 +2,8 @@
 """fetching user data using api"""
 
 
-import sys
 import requests as req
+import sys
 
 if __name__ == '__main__':
     ID_Employee = sys.argv[1]
