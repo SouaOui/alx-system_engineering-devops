@@ -11,7 +11,7 @@ if __name__ == '__main__':
     url_to_do = "https://jsonplaceholder.typicode.com/users/{}/todos/".format(
         ID_Employee)
     response = req.get(url).json()
-    name = response.get('name')
+    username = response.get('username')
     response_to_dos = req.get(url_to_do).json()
 
     count = 0
@@ -20,5 +20,5 @@ if __name__ == '__main__':
             status = to_do.get('completed')
             title = to_do.get('title')
             text = '"{}","{}","{}","{}"\n'.format(
-                ID_Employee, name, status, title)
+                ID_Employee, username, status, title)
             file.write(text)
