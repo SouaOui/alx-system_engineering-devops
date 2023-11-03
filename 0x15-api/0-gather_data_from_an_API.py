@@ -2,24 +2,26 @@
 """fetching user data using api"""
 
 
-import requests as req
+import requests
 import sys
 
-if __name__ == '__main__':
-    ID_Employee = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/users/{}".format(ID_Employee)
-    url_to_do = "https://jsonplaceholder.typicode.com/users/{}/todos/".format(
-        ID_Employee)
-    response = req.get(url).json()
-    name = response.get('name')
-    response_to_dos = req.get(url_to_do).json()
 
-    count = 0
-    total = len(response_to_dos)
-    for to_do in response_to_dos:
-        if to_do.get('completed'):
-            count += 1
-    print("Employee {} is done with tasks({}/{}):".format(name, count, total))
-    for to_do in response_to_dos:
-        if to_do.get('completed'):
-            print("\t{}".format(to_do['title']))
+if __name__ == "__main__":
+    employee_id = sys.argv[1]
+    base_url = f"https://jsonplaceholder.typicode.com"
+    params = {'userId': employee_id}
+
+    user = requests.get(f"{base_url}/users/{employee_id}").json()
+    todos = requests.get(f"{base_url}/todos", params=params).json()
+
+    completed = []
+    for task in todos:
+        if task.get("completed"):
+            completed.append(task.get("title"))
+    completed_count = len(completed)
+    total_count = len(todos)
+
+    print("Employee {} is done with tasks({}/{}):".format(
+        user.get("name"), len(completed), len(todos)))
+    for task in completed:
+        print("\t" + task)
