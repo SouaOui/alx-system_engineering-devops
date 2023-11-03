@@ -15,14 +15,14 @@ if __name__ == '__main__':
     response_to_dos = req.get(url_to_do).json()
     new_list = []
     my_dict = dict()
-    
+
     with open(f'{ID_Employee}.json', 'w', encoding="utf-8") as file:
         for item in response_to_dos:
             new_one = {
-            "task":item['title'],
-            "completed":item['completed'],
-            "username":username }
+                "task": item['title'],
+                "completed": item['completed'],
+                "username": username}
             new_list.append(new_one)
         my_dict['{}'.format(ID_Employee)] = new_list
         my_content = js.dumps(my_dict)
-        file.write(my_content +"\n")
+        file.write(my_content + "\n")
