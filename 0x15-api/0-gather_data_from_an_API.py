@@ -22,4 +22,4 @@ if __name__ == '__main__':
     print("Employee {} is done with tasks({}/{}):".format(name, count, total))
     for to_do in response_to_dos:
         if to_do.get('completed'):
-            print("     {}".format(to_do['title']))
+            print("\t {}".format(to_do['title']))
