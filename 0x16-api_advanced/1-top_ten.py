@@ -10,7 +10,7 @@ headers = {"User-Agent": "User_Agent_/3.0"}
 
 
 def top_ten(subreddit):
-    """Method Subscribers"""
+    """Top Ten popular"""
     subreddit = sys.argv[1]
     url = "https://api.reddit.com/r/{}/hot?limit=10".format(subreddit)
     response = req.get(url, allow_redirects=False, headers=headers)
