@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """
+queries the Reddit API and
+prints the titles of the first 10 hot posts listed for a given subreddit
 List the TOP 10 of popular in Reddit
 """
+
 
 import requests as req
 from sys import argv
