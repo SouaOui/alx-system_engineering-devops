@@ -5,7 +5,6 @@ List the TOP 10 of popular in Reddit
 
 import requests as req
 import sys
-
 headers = {"User-Agent": "User_Agent_/3.0"}
 
 
