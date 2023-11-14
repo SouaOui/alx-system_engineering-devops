@@ -20,4 +20,4 @@ def top_ten(subreddit):
         data = response.json()
         for query in data['data']['children']:
             print(query['data']['title'])
-    return None
+    print(None)
