@@ -3,6 +3,7 @@
 number of subscribers 'How Many Subs?'
 """
 
+
 import requests as req
 headers = {"User-Agent": "User_Agent_/3.0"}
 
@@ -15,4 +16,3 @@ def number_of_subscribers(subreddit):
         data = response.json()
         return data['data']['subscribers']
     return 0
-
