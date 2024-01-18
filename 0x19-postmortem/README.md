@@ -1,0 +1,1 @@
+Postmortem : is mostly done in industry after any outage when something was down or not working and this is impacted the business, the users of the system, then the Team as each one individually has its own responsibility for the system they had a meet in a room and basically write together this postmortem.
