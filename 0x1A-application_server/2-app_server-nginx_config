@@ -1,28 +1,25 @@
+# Nginx Configuration
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-
-    # Server name can be your IP address or a domain if you have one
+    add_header X-served-By 374415-web-01;
     server_name 52.204.117.41;
 
-    index index.html index.htm;
-
-    location / {
-        # Uncomment the try_files directive if you want to handle static files
-        # try_files $uri $uri/ =404;
-
-        include proxy_params;
-        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 
-    # Additional configuration for handling PHP scripts if needed
-    # location ~ \.php$ {
-    #     include snippets/fastcgi-php.conf;
-    #     fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-    # }
-
-    # Additional security measures (commented out, uncomment if needed)
-    # location ~ /\.ht {
-    #     deny all;
-    # }
+    location / {
+        add_header X-Served-By $hostname;
+        root /var/www/html;
+        index index.html;
+        error_page 404 /error.html;
+    }
+    location /hbnb_static/ {
+        alias /data/web_static/current/;
+    }
+    location /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+        # proxy_redirect off;
+    }
 }
