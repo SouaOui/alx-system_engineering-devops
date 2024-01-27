@@ -1,0 +1,35 @@
+# Nginx Configuration
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    add_header X-served-By 374415-web-01;
+    server_name 52.204.117.41;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    # server header
+    location / {
+        add_header X-Served-By $hostname;
+        root /var/www/html;
+        index index.html;
+        error_page 404 /error.html;
+    }
+    # location hbnb static
+    location /hbnb_static/ {
+        alias /data/web_static/current/;
+    }
+    # location airbnb-onepage
+    location /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+        # proxy_redirect off;
+    }
+    # location dynamic number odd
+    location /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1/;
+        proxy_redirect off;
+    }
+    # location to RESTful API route (/api)
+    location /api {
+	proxy_pass http://127.0.0.1:5002/api;
+    }
